@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Rubik&display=swap');
+
+/* 전체 태그에 적용 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GowunDodum-Regular', cursive; /*대체용 cursive 는 기본폰트*/
+  /* font-family: 'Rubik', sans-serif; */
+  display: flex; /* 하위 태그들을 정렬*/
+  justify-content: center; /*가로방향정렬*/
+  align-items: center; /*세로방향정렬*/
+  height: 100vh; /*vh는 화면의 %*/
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 90vw; /*화면의 90% 너비*/
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5; /*플렉스 비율*/
+  margin: 10px;
+  position: relative; /*포지션 기준*/
+  /* 트랜지션 모든 변화에 시간 0.7s */
+  transition: all 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 1; /*0(안보임)~1 */
+}
+
+/* panel과 active가 동시에 있을때 */
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* 미디어쿼리 사용화면이 480이하 적용 (최대 480까지 적용 그 이상은 적용X)*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw; /*화면을 100%너비*/
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none; /*4,5번쨰 안보이게*/
+  }
+}

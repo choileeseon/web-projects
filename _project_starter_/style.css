@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Rubik&display=swap');
+
+/* 전체 태그에 적용 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GowunDodum-Regular', cursive; /*대체용 cursive 는 기본폰트*/
+  /* font-family: 'Rubik', sans-serif; */
+  display: flex; /* 하위 태그들을 정렬*/
+  flex-direction: column; /*전체세로정렬*/
+  justify-content: center; /*가로방향정렬*/
+  align-items: center; /*세로방향정렬*/
+  height: 100px; /*vh는 화면의 %*/
+  overflow: hidden;
+  margin: 0;
+}
