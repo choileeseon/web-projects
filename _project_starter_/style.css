@@ -12,7 +12,7 @@ body {
   flex-direction: column; /*전체세로정렬*/
   justify-content: center; /*가로방향정렬*/
   align-items: center; /*세로방향정렬*/
-  height: 100px; /*vh는 화면의 %*/
+  height: 100vh; /*vh는 화면의 %*/
   overflow: hidden;
   margin: 0;
 }

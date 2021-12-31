@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* 전체 태그에 적용 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', monospace;
+  background-color: #333;
+  color: #222;
+  overflow: hidden; /*메뉴를 선택시 사진이 옆으로 움직일때 컨테이너 밖으로 삐져나오지 않도록*/
+  margin: 0;
+}
+
+.container {
+  margin-top: 5px;
+  background-color: #fafafa;
+  transform-origin: top left; /*회전 중심*/
+  width: 100vw; /*가로 100%*/
+  min-height: 100vh; /*가로 100% 더 늘어날수있음*/
+  padding: 50px;
+  transition: transform 0.5s linear; /*일정한 속도로 0.5초 동안 회전*/
+}
+
+/* 클래스 container + show-nav */
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+/*버튼 컨테이너 클래스, 상단의 버튼 위치옮기기*/
+.circle-container {
+  position: fixed; /*위치고정*/
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #3368;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative; /*버튼 2개의 기준*/
+  transition: trasform 0.5s linear;
+}
+
+/* show-nav클래스가 컨테이너에 추가가 되면 .circle에 적용 */
+.container.show-nav .circle {
+  transform: rotate(-85deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background-color: transparent; /*배경색 투명*/
+  border: 0;
+  font-size: 26px;
+  color: white;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left; /*open버튼 누르고 돌아가면 나오도록 위치해놓음*/
+}
+
+/* 하단의 메뉴 : show_nav 클래스가 있으면 나타남 */
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%); /* 회전하기 전에는 -100% x위치로 안보임*/
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #ff7979;
+  font-weight: bold;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
