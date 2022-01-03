@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+/* 전체 태그에 적용 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  font-family: 'Single+Day', monospace; /*대체용 cursive 는 기본폰트*/
+  /* font-family: 'Rubik', sans-serif; */
+  display: flex; /* 하위 태그들을 정렬*/
+  flex-direction: column; /*전체세로정렬*/
+  justify-content: center; /*가로방향정렬*/
+  align-items: center; /*세로방향정렬*/
+  /* height: 100vh; vh는 화면의  */
+  overflow-x: hidden; /*가로만 안보이고 세로는 스크롤*/
+  margin: 0;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%); /*화면 밖*/
+  transition: transform 0.4s ease;
+  margin: 10px;
+}
+
+/* 클래스 박스 중에 짝수번쨰 적용*/
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translate(0%); /*원래자리로 돌아감*/
+}
+
+.box h2 {
+  font-size: 45px;
+}
