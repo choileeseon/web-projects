@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  padding: 1rem;
+  padding: 1rem; /*1rem = 16px*/
   display: flex;
   justify-content: flex-end;
   background-color: var(--secondary-color);
@@ -29,7 +29,7 @@ header {
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: #fff; /* 클릭했을때 | 색깔 */
 }
 
 /* 인풋창 안의 표시하는 글씨 */
@@ -55,7 +55,7 @@ main {
   background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
-  overflow: hidden; /* 화면 밖 안벗어나게 하는 */
+  overflow: hidden; /* 화면 밖 안벗어나게 다보이게*/
   border-radius: 3px;
 }
 
@@ -71,7 +71,7 @@ main {
   justify-content: space-between;
   gap: 0.2rem;
   padding: 0.5rem 1rem 1rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; /* 글자 사이간격*/
 }
 
 .movie-info h3 {
