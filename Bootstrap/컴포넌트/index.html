@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 부트스트랩 CSS 링크 -->
+    <!--css/bootstrap.min.css과 같다-->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>부트스트랩</title>
+  </head>
+  <body>
+    <!-- 일반 문장에 배찌 -->
+    <div class="container">
+      <h1>Example heading <span class="badge bg-secondary">New</span></h1>
+      <h2>Example heading <span class="badge bg-secondary">New</span></h2>
+      <h3>Example heading <span class="badge bg-secondary">New</span></h3>
+      <h4>Example heading <span class="badge bg-secondary">New</span></h4>
+      <h5>Example heading <span class="badge bg-secondary">New</span></h5>
+      <h6>Example heading <span class="badge bg-secondary">New</span></h6>
+    </div>
+    <!-- 버튼에 배지사용 -->
+    <div class="container">
+      <button type="button" class="btn btn-primary">
+        알림 <span class="badge bg-secondary">4</span>
+      </button>
+    </div>
+    <!-- 버튼의 위치 이동 -->
+    <div class="container my-3">
+      <button type="button" class="btn btn-primary position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          99+
+        </span>
+      </button>
+    </div>
+    <!-- 동그란 배지 -->
+    <div class="container">
+      <button type="button" class="btn btn-primary position-relative">
+        새로운 알림
+        <span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle" style="background-color: brown;">
+        </span>
+      </button>
+    </div>
+    <!-- 버튼 -->
+    <div class="container my-3">
+      <button type="button" class="btn btn-outline-primary btn-lg">Primary</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+    <!-- 카드 -->
+    <div class="container my-3">
+      <div class="card" style="width:300px">
+          <img src="https://media.istockphoto.com/photos/happy-holidays-christmas-card-with-close-up-of-pine-tree-branch-and-picture-id1355669924?b=1&k=20&m=1355669924&s=170667a&w=0&h=1eCLjpZ2D8dyjEWQvL-AVQ2Rc7gjnmKj9d6oPHDUqsc=" class="card-img-top" alt="모름">
+          <div class="card-body">
+            <h5 class="card-title">카드 제목</h5>
+            <p class="card-text">내용을 적습니다.</p>
+            <a href="#" class="btn btn-primary">이동하기</a>
+          </div>
+      </div>
+    </div>
+    <!-- 이미지가 아래쪽 카드 -->
+    <div class="container my-3">
+      <div class="card" style="width:300px">
+        <h5 class="card-title">카드 제목</h5>
+        <div class="card-body">
+          <p class="card-text">내용을 적습니다.</p>
+          <a href="#" class="btn btn-outline-primary">이동하기</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1554894872-ab8a04e23d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZXRpbmclMjBjYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-bottom" alt="모름">
+      </div>
+    </div>
+    <!-- 이미지 오버레이 -->
+    <div class="container my-3">
+      <div class="card bg-dark text-white">
+        <div class="card-img-overlay">
+          <h5 class="card-title">카드 제목</h5>
+          <p class="card-text">내용을 적습니다.</p>
+          <a href="#" class="btn btn-outline-primary">이동하기</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1554894872-ab8a04e23d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZXRpbmclMjBjYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-bottom" alt="모름">
+      </div>
+    </div>
+    
+    <!-- 캐로셀 (회전하는 이미지) -->
+    <div class="container">
+      <div id="car1" class="carousel slide" data-bs-ride="carousel">
+        <!-- 인디케이터 -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#car1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#car1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#car1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- 일반 이미지 -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://media.istockphoto.com/photos/covid19-vaccination-record-card-on-white-background-picture-id1297704047?b=1&k=20&m=1297704047&s=170667a&w=0&h=4Wam0TAivG7DsLdgTabTCswNQ3gN4YXSQ7VnPdxx5t4=" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/photos/immune-passport-or-certificate-for-travel-concept-coronavirus-record-picture-id1312163438?b=1&k=20&m=1312163438&s=170667a&w=0&h=DWeFaEBZ_6yUzIz5CsOyKb4IsdBrnQS3xwhd7kCIsiQ=" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/photos/covid-vaccine-plan-picture-id1290119293?b=1&k=20&m=1290119293&s=170667a&w=0&h=InnSj0OsvBR1SXS3za63a63qYxabxwx7KFVIYpXnzIg=" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <!-- 좌우 투명 버튼 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#car1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#car1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- 부트스트랩의 자바스크립트 링크 -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      const myCaro = document.getElementById('car1');
+      var carousel = new bootstrap.Carousel(myCaro, {
+        interval: 1000, /* 속도 */ 
+        wrap: true /* 기본 , 계속반복 */
+      })
+    </script>
+  </body>
+</html>
