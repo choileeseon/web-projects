@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery - 셀렉터</title>
+	<!-- 다운받거나 jQuery 다운로드 홈페이지 맨 밑에 jQuery CDN 클릭 - 3.6.0버전 minified 클릭 -->
+    <script	 src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+			font-size: 17px;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header {
+			background: #333;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px solid black;
+			margin-bottom: 10px;
+		}
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>jQuery 시작하기</h1>
+    </header>
+    <div id="container">
+		<h1 id="heading1">Heading One</h1>
+		<p id="para1">Lorem ipsum dolor <span>samp</span> sit amet consectetur adipisicing elit. Sed, laborum reprehenderit delectus ratione incidunt quia iure exercitationem iste, tenetur assumenda deserunt error harum asperiores, ab quibusdam velit esse eaque debitis?</p>
+		<h1 class="heading2">Heading Two</h1>
+		<p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, laborum reprehenderit delectus ratione incidunt quia iure exercitationem iste, tenetur assumenda deserunt error harum asperiores, ab quibusdam <span>enoup</span> velit esse eaque debitis?</p>
+		<ul id="list">
+			<!-- li{들어갈 내용} * 갯수 -->
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+			<li>리스트 아이템</li>
+		</ul>
+		<!-- input 태그 -->
+		<input type="button" value="버튼">
+		<input type="submit" value="전송">
+		<input type="text">
+	</div>
+
+    <script>
+		//제이쿼리를 사용해 보기 태그선택 $('선택자')
+		//$('h1').hide(); //h1태그들을 찾아서 hide() 안보이게 숨김
+		//$('h1#heading1').hide(); //id가 heading1 인 h1지우기
+		//$('h1.heading2').hide();
+
+		$('p span').css('color','red');
+		$('ul#list li:even').css('background-color',"green"); //even 짝수 0번부터
+		$('ul#list li:odd').css('background-color',"yellow"); //odd 홀수
+		$('ul#list li:nth-child(3)').css('list-style','none'); // 세번쨰 리스트 점이 사라짐
+		$('input:button').hide();
+	</script>
+</body>
+</html>

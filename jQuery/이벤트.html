@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery - 셀렉터</title>
+	<!-- 다운받거나 jQuery 다운로드 홈페이지 맨 밑에 jQuery CDN 클릭 - 3.6.0버전 minified 클릭 -->
+    <script	 src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+			font-size: 17px;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header {
+			background: #333;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px solid black;
+			margin-bottom: 10px;
+		}
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+    </style>
+</head>
+
+<body>
+	<!-- <script>
+		$(document).ready(function(){
+			// html이 준비된 후에 함수를 실행
+			$('#btn1').click(function(){ 
+				alert("버튼 클릭함!");
+		});
+	</script> -->
+    <header>
+        <h1>jQuery 시작하기</h1>
+    </header>
+    <div id="container">
+		<h3>마우스 이벤트</h3>
+		<button id="btn1">버튼 1</button>
+		<button id="btn2">버튼 2</button>
+		<button id="btn3">버튼 3</button>
+		<p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aliquid iusto! Quia quasi tempora autem debitis vitae consectetur voluptas commodi, eaque hic fugiat magni, delectus maxime velit libero voluptate. Laudantium?</p>
+
+		<h1 id="coords"></h1>
+		<!-- 폼 -->
+		<hr>
+        <form action="">
+			<label for="name">Name</label><br> <!-- for="name"은 input id="name"을 가르키는것. label만 클릭해도 input에 포커스-->
+			<input type="text" id="name" name="name">
+			<br>
+			<label for="emial">Email</label><br>
+			<input type="email" id="emial" name="email">
+			<br>
+			<label for="gender">Gender</label><br>
+			<select name="gender" id="gender">
+				<option value="mail">남성</option>
+				<option value="femail">여성</option>
+				<option value="animal" selected>동물</option> <!-- selected 는 처음에 보여지는 옵션-->
+			</select>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<!-- 자바스크립트가 아래에 있어야 찾고 구현가능. 맨위에 있으면 못찾음 -->
+    <script>
+		// click 방법은 두가지 (click은 바로써도 됨)
+		// $('#btn1').on('click',함수) 
+		// $('#btn1').click(function(){ //click(()=>{})도 가능
+		// 	alert("버튼 클릭함!");
+		// });
+
+		$(document).ready(function(){
+			// html이 준비된 후에 함수를 실행
+		
+			$('#btn1').on('dblclick', function(){ 
+				$('.para1').hide();
+			});
+
+			$('#btn2').click(function(){ 
+				$('.para1').show();
+			});
+
+			$('#btn3').click(function(){ 
+				$('.para1').toggle();	// 위의 hide,show 기능이 모두 되는것
+			});
+
+			// //마우스 갖다대면 숨기고 빠져나오면 보이기
+			// $('#btn1').on('mouseenter', function(){  
+			// 	$('.para1').hide();
+			// });
+			// $('#btn1').on('mouseleave', function(){ 
+			// 	$('.para1').show();
+			// });
+		});
+
+		// $(document).on('mousemove',function(e){
+		// 	//console.log(e.clientX, e.clientY);
+		// 	$('#coords').text('X좌표: '+ e.clientX + ', Y좌표 : ' + e.clientY);
+		// });
+		
+		$('input').focus(function(){
+			//인풋창을 클릭했을 경우 (커서가 나올때) 이벤트
+			$(this).css('background-color','pink');
+			//this는 이벤트가 발생한 객체
+		});
+
+		$('input').blur(function(){
+			//인풋창 나갔을때 (커서이동)
+			$(this).css('background-color','white');
+		});
+
+		// 변경 이벤트
+		$('select').change(function(e){
+			alert('바뀜');
+			alert(e.target.value);
+		});
+	</script>
+</body>
+</html>

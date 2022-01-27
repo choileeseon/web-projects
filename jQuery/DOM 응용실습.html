@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery - 셀렉터</title>
+	<!-- 다운받거나 jQuery 다운로드 홈페이지 맨 밑에 jQuery CDN 클릭 - 3.6.0버전 minified 클릭 -->
+    <script	 src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+			font-size: 17px;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header {
+			background: #333;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px solid black;
+			margin-bottom: 10px;
+		}
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+		.myClass {
+			color: skyblue;
+			background-color: gray;
+			font-size: 2em;
+			font-family: cursive;
+			font-weight: 900;
+			padding: 10px;
+		}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>jQuery 시작하기</h1>
+    </header>
+    <div id="container">
+		<button id="btn1">버튼 1</button>
+		<p class="para1">첫번째 문장입니다.</p>
+		<p class="para2">두번째 문장입니다.</p>
+		<div id="myDiv"></div>
+
+		<ul>
+			<!-- {리스트 아이템 $} : $가 저절로 숫자매겨짐 -->
+			<li>리스트 아이템 1</li>
+			<li>리스트 아이템 2</li>
+			<li>리스트 아이템 3</li>
+			<li>리스트 아이템 4</li>
+		</ul>
+	</div>
+    <script>
+		// 객체 형식으로 여러개의 css를 넣을 수 있음 
+		$('p.para1').css({color:'red',background : 'yellow'});
+		// 하지만 css속성이 많을 경우 클래스를 추천
+
+		// 클래스 추가
+		$('p.para2').addClass('myClass');
+		// 이벤트에 클래스 토글(추가,제거 동시에)
+		$('#btn1').on('click',function(){
+			$('p.para2').toggleClass('myClass');
+		});
+
+		// 텍스트 내용 vs html+텍스트 수정
+		$('#myDiv').text('문자열 내용 입력');
+		$('#myDiv').html('<h3>태그도</h3><h5>같이</h5>'); 
+
+		// 태그를 추가하는 방법 append,prepend 
+		// append 맨 마지막에 추가됨.
+		$('ul').append('<li>append 추가</li>');
+		// prepend 맨 처음에 추가됨.
+		$('ul').prepend('<li>prepend 추가</li>');
+
+		// 배열 처리 반복문
+		const 과일 = ['사과','딸기','복숭아','배']
+		$.each(과일, function(i, val){ // i는 index
+			$('ul').append('<li>' + val + '</li>');
+		});
+		
+		과일.forEach(function (val, i){
+			$('ul').append('<li>' + i + '</li>');
+		})
+		//제이쿼리로 가능한 것은 자바스크립트로 모두 가능
+		// 제이쿼리 자바스크립트 동시 사용가능
+	</script>
+</body>
+</html>
