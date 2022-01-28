@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery - AJAX</title>
+	<!-- 다운받거나 jQuery 다운로드 홈페이지 맨 밑에 jQuery CDN 클릭 - 3.6.0버전 minified 클릭 -->
+    <link rel="stylesheet" href="#" type="image/x-icon" />
+	<script	 src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+			font-size: 17px;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f4f4;
+			line-height: 1.5em;
+		}
+		header {
+			background: #333;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			border-bottom: 4px solid black;
+			margin-bottom: 10px;
+		}
+		#container {
+			width: 90%;
+			margin: auto;
+			padding: 10px;
+		}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>jQuery AJAX Post</h1>
+    </header>
+    <div id="container">
+		<h3>포스트 추가</h3>
+		<form action="https://jsonplaceholder.typicode.com/posts" id="postForm" method="post">
+			<input type="text" id="title" placeholder="제목"><br>
+			<textarea id="body" cols="30" rows="10" placeholder="내용"></textarea><br>
+			<input type="submit" value="전송">
+		</form>
+	</div>
+
+    <script>
+		$('#postForm').submit(function(e){ //전송버튼을 눌렀을 때 이벤트(submit)
+			e.preventDefault(); // 이벤트시 서버로 보내는 요청을 중지
+			// console.log('서버주소로 요청') 
+			let title = $('#title').val(); // 제목창의 내용
+			let body = $('#body').val(); // 바디창의 내용
+			let url = $(this).attr('action'); // 폼의 액션 속성의 값(주소)
+			$.post(url,{title: title, body: body})
+			 .done(function(data){
+				 console.log("포스트 저장됨"); // 포스트 성공
+				 console.log(data);
+			 })
+		});
+
+		// $.ajax({
+		// 	method:'GET',
+		// 	url:'https://jsonplaceholder.typicode.com/posts',
+		// 	dataType:'json'
+		// })
+		// .done(function(data){ // 요청 성공시 결과 데이터 / HTTP 요청이 성공하면 요청한 데이터가 done() 메소드로 전달됨.
+		// 	//console.log(data);
+		// 	$.each(data,function(i,item){
+		// 		$('#results').append(`<h3>${item.title}</h3><p>${item.body}</p>`)
+		// 	});
+		// });
+	</script>
+</body>
+</html>
